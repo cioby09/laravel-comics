@@ -13,17 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
 Route::get('/characters', function () {
     return view('characters');
 });
 
-Route::get('/comics', function () {
-    $comics = config('db.comics');
-    return view('comics', compact('comics'));
+Route::get('/', function () {
+    $db = config('db');
+    $comics = $db['comics'];
+    return view('home', compact('comics'));
 });
 
 Route::get('/movies', function () {

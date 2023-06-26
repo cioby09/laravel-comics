@@ -4,12 +4,12 @@
     <div class="comic-container py-4">
         <div class="container">
             <div class="row row-cols-6 g-3">
-                @foreach ($comics as $comic)
+                @foreach ($comics as $single_comics)
                     <div class="col">
                         <div class="card">
-                            <img src="{{ $comic['thumb'] }}" alt="">
+                            <img src="{{ $single_comics['thumb'] }}" alt="">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $comic['series'] }}</h5>
+                                <h5 class="card-title">{{ $single_comics['series'] }}</h5>
                             </div>
                         </div>
                     </div>
